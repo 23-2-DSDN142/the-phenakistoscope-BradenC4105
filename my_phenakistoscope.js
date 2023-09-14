@@ -1,4 +1,4 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT =10;
 
 function setup_pScope(pScope){
   pScope.output_mode(ANIMATED_DISK);
@@ -14,17 +14,17 @@ function setup_layers(pScope){
 
   new PLayer(null, 56, 186, 209);  //lets us draw the whole circle background, ignoring the boundaries
 
-  var layer1 = new PLayer(FrogJump);
-  layer1.mode( RING );
-  layer1.set_boundary( 400, 1000 );
-
-  var layer2 = new PLayer(squares);
+   var layer2 = new PLayer(squares);
   layer2.mode( RING );
   layer2.set_boundary( 0, 400 );
 
   var layer3 = new PLayer(lilypad)
-  layer3.mode( RING )
+  layer3.mode( SWIRL(2) )
   layer3.set_boundary( 450, 950)
+
+  var layer1 = new PLayer(FrogJump);
+  layer1.mode( RING );
+  layer1.set_boundary( 400, 1000 );
 }
 
 function FrogJump(x, y, animation, pScope){
@@ -47,6 +47,19 @@ function squares(x, y, animation, pScope){
 }
 
 function lilypad(x, y, animation, pScope){
-  fill(23, 166, 61)
-  rect(50-animation.frame*200,500,100,10)
+  angleMode(DEGREES)
+  noStroke()
+  fill(245, 149, 205)
+ellipse(0, 10, 20, 100)
+rotate(45)
+ellipse(0, 10, 20, 100)
+rotate(45)
+ellipse(0, 10, 20, 100)
+rotate(45)
+ellipse(0, 10, 20, 100)
+rotate(45)
+ellipse(0, 10, 20, 100)
+}
+function FrogFace(x, y, animation, pScope){
+  
 }
