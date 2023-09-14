@@ -1,7 +1,7 @@
 const SLICE_COUNT =10;
 
 function setup_pScope(pScope){
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode(OUTPUT_PRINT(A3));
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
@@ -22,9 +22,7 @@ function setup_layers(pScope){
   layer2.mode( RING );
   layer2.set_boundary( 0, 400 );
 
-  
-
-  var layer1 = new PLayer(FrogJump);
+   var layer1 = new PLayer(FrogJump);
   layer1.mode( RING );
   layer1.set_boundary( 400, 1000 );
 
